@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunnyside Agency Landing Page - Custom English</title>
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            --dark-text: #232228;
+            --gray-text: #8C8C8C;
+            --footer-bg: #90D4C5;
+            --dark-green: #2C7566;
+            --dark-blue: #214353;
+            
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--dark-text);
+        }
+
+        h1, h2, h3, .heading-font {
+            font-family: 'Georgia', serif;
+            font-weight: 900; 
+            color: var(--dark-text);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-block {
+            background-image: url('./images/desktop/image-header.jpg');
+            background-size: cover;
+            background-position: center bottom;
+            height: 80vh; 
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            padding: 30px 40px 0;
+        }
+
+        .top-menu {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .menu-links {
+            display: flex;
+            align-items: center;
+            gap: 30px; 
+        }
+
+        .menu-links a {
+            color: white; 
+            font-weight: 600;
+        }
+
+        .contact-button {
+            background-color: white; 
+            color: var(--dark-text) !important;
+            padding: 15px 30px;
+            border-radius: 30px; 
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .main-title {
+            color: white;
+            font-size: 48px;
+            text-align: center;
+            letter-spacing: 5px; 
+            align-self: center; 
+            margin-bottom: 50px;
+        }
+
+        .arrow {
+            align-self: center; 
+            width: 30px;
+            margin-bottom: 50px;
+        }
+        
+
+        .content-row {
+            display: flex;
+        }
+
+        .text-box, .image-box {
+            width: 50%; 
+            min-height: 500px;
+        }
+
+        .text-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            padding: 100px 10%; 
+        }
+        
+        .text-box h2 {
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+
+        .text-box p {
+            color: var(--gray-text);
+            margin-bottom: 30px;
+        }
+
+        .more-link {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .image-box {
+            background-size: cover;
+            background-position: center;
+        }
+        .img-transform {
+            background-image: url('./images/desktop/image-transform.jpg');
+        }
+        .img-standout {
+            background-image: url('./images/desktop/image-stand-out.jpg');
+        }
+
+        .graphics-row {
+            display: flex;
+        }
+        .graphic-box {
+            width: 50%; 
+            min-height: 600px;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+            padding: 0 15% 60px; 
+        }
+
+        .design-section {
+            background-image: url('./images/desktop/image-graphic-design.jpg');
+        }
+        .photo-section {
+            background-image: url('./images/desktop/image-photography.jpg');
+        }
+
+        .graphic-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: var(--dark-green);
+        }
+        .photo-section .graphic-text h3 {
+            color: var(--dark-blue);
+        }
+
+        .graphic-text p {
+            color: var(--dark-green); 
+            font-size: 16px;
+        }
+        .photo-section .graphic-text p {
+            color: var(--dark-blue);
+        }
+
+        .testimonial-area {
+            padding: 120px 0; 
+            text-align: center;
+        }
+
+        .testimonial-header {
+            color: #A9A9A9;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 18px;
+            margin-bottom: 80px;
+        }
+
+        .client-container {
+            display: flex;
+            justify-content: center; 
+            gap: 30px; 
+            max-width: 1200px;
+            margin: 0 auto; 
+        }
+
+        .client-card {
+            width: 30%; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            padding: 0 20px;
+        }
+
+        .client-photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%; 
+            margin-bottom: 60px;
+        }
+
+        .client-quote {
+            color: var(--dark-text);
+            margin-bottom: 60px;
+            font-size: 18px;
+        }
+
+        .client-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .client-job {
+            color: #A9A9A9;
+            font-size: 14px;
+        }
+
+        .gallery-block {
+            display: flex;
+        }
+
+        .gallery-item {
+            width: 25%; 
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cone { background-image: url('./images/desktop/image-gallery-cone.jpg'); }
+        .bottles { background-image: url('./images/desktop/image-gallery-milkbottles.jpg'); }
+        .orange { background-image: url('./images/desktop/image-gallery-orange.jpg'); }
+        .sugar { background-image: url('./images/desktop/image-gallery-sugarcubes.jpg'); }
+
+        footer {
+            background-color: var(--footer-bg); 
+            padding: 70px 0 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        .footer-logo {
+            font-family: Arial, sans-serif;
+            color: var(--dark-green);
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-links {
+            display: flex; 
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .footer-links a {
+            color: var(--dark-blue);
+            font-size: 18px;
+        }
+
+        .social-icons {
+            display: flex; 
+            gap: 25px;
+        }
+
+        .social-icons img {
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-block">
+        
+        <nav class="top-menu">
+            <img src="./images/logo.svg" alt="Sunnyside logo" class="logo">
+            <div class="menu-links">
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Projects</a>
+                <a href="#" class="contact-button">CONTACT</a>
+            </div>
+        </nav>
+
+        <h1 class="main-title heading-font">WE ARE CREATIVES</h1>
+        
+        <img src="./images/icon-arrow-down.svg" alt="Arrow down" class="arrow">
+    </header>
+
+    <main>
+        <div class="content-row">
+            <div class="text-box">
+                <h2 class="heading-font">Transform your brand</h2>
+                <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
+                <a href="#" class="more-link heading-font">LEARN MORE</a>
+            </div>
+            <div class="image-box img-transform"></div>
+        </div>
+
+        <div class="content-row">
+            <div class="image-box img-standout"></div>
+            <div class="text-box">
+                <h2 class="heading-font">Stand out to the right audience</h2>
+                <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we'll build and extend your brand in digital places.</p>
+                <a href="#" class="more-link heading-font">LEARN MORE</a>
+            </div>
+        </div>
+
+        <div class="graphics-row">
+            <div class="graphic-box design-section">
+                <div class="graphic-text">
+                    <h3 class="heading-font">Graphic Design</h3>
+                    <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.</p>
+                </div>
+            </div>
+            <div class="graphic-box photo-section">
+                <div class="graphic-text">
+                    <h3 class="heading-font">Photography</h3>
+                    <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-area">
+            <h2 class="testimonial-header heading-font">CLIENT TESTIMONIALS</h2>
+            <div class="client-container">
+                
+                <div class="client-card">
+                    <img src="./images/image-thomas.jpg" alt="Thomas S." class="client-photo">
+                    <p class="client-quote">Sunnyside's excellent coupled with their keen interest in our brand's success made it a satisfying and enjoyable experience.</p>
+                    <p class="client-name heading-font">Thomas S.</p>
+                    <p class="client-job">Chief Operating Officer</p>
+                </div>
+
+                <div class="client-card">
+                    <img src="./images/image-jennie.jpg" alt="Jennie F." class="client-photo">
+                    <p class="client-quote">Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+                    <p class="client-name heading-font">Jennie F.</p>
+                    <p class="client-job">Business Owner</p>
+                </div>
+                
+                <div class="client-card">
+                    <img src="./images/image-emily.jpg" alt="Emily R." class="client-photo">
+                    <p class="client-quote">We were looking for a fresh perspective and the team at Sunnyside delivered. The process was seamless and the results speak for themselves.</p>
+                    <p class="client-name heading-font">Emily R.</p>
+                    <p class="client-job">Marketing Director</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-block">
+            <div class="gallery-item cone"></div>
+            <div class="gallery-item bottles"></div>
+            <div class="gallery-item orange"></div>
+            <div class="gallery-item sugar"></div>
+        </div>
+    </main>
+
+    <footer>
+        <h3 class="footer-logo">sunnyside</h3>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Projects</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="./images/icon-facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="./images/icon-instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="./images/icon-twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="./images/icon-pinterest.svg" alt="Pinterest"></a>
+        </div>
+    </footer>
+
+</body>
+</html>
